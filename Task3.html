@@ -7,7 +7,7 @@
 
     YOUR OBJECTIVE:
 
-    Take the logic we've defiend in the last two tasks and tie them to the parts 
+    Take the logic we've defined in the last two tasks and tie them to the parts 
     of the code that make the most sense. By the end, you should have a simple webpage 
     that lets you add todos!
 
@@ -62,7 +62,10 @@
             const createdTodo = todoInput.value.trim();
             
             // Add non-empty string todos to the todo list
-            // YOUR CODE HERE 
+            // YOUR CODE HERE
+            if (createdTodo != '') {
+                addTodo(createdTodo);
+            }
 
             // reset the input value after add todo is clicked.
             todoInput.value = '';
@@ -90,11 +93,13 @@
 
         function deleteTodo(index) {
             // YOUR CODE HERE (recycle your work from former tasks)
+            todoList.splice(index, 1);
             refreshTodoList()
         }
 
         function addTodo(todo) {
             // YOUR CODE HERE (recycle your work from former tasks)
+            todoList.push(todo);
             refreshTodoList()
         }
     </script>
